@@ -3,7 +3,7 @@ public class while_loop{
         int i=1;
         while(i<=10){
             System.out.print(i);
-            break;// stop and exit the loop.
+            break;// stop and exit the loop..
             
         }
     }
