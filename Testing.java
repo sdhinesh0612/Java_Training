@@ -1,42 +1,27 @@
 import java.util.*;
-class User{
-    String Name;
-    long Phone;
-    String Address;
-    User(String Name, long Phone, String Address){
-        this.Name=Name;
-        this.Phone=Phone;
-        this.Address=Address; 
-    }
-    void display(){
-        System.out.println("Name : "+Name+"\nPhone : "+Phone+"\nAddress : "+Address);
-    }
-    
-}
-class Swiggy extends User{
-    Swiggy(String Name, long Phone, String Address){
-        super(Name,Phone,Address);
-    }
-    void FoodOrder(){
-        System.out.println();
-        super.display();
-        System.out.println("Your Order Confirmed...");
-    }
-}
+
 public class Testing {
+    public static int singleNumber(int[] arr){
+        Set<Integer> s = new HashSet<>();
+        for(int i=0; i<arr.length; i++){
+            if(!(s.add(arr[i]))){
+                s.remove(arr[i]);
+            }
+            else{
+                s.add(arr[i]); 
+            }
+        }
+        return s.get(0); 
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your Details");
-        System.out.println("Enter your Name :");
-        String n = sc.nextLine();
-        System.out.println("Enter your Mobile Number");
-        long p = sc.nextLong();
-        sc.nextLine();
-        System.out.println("Enter your Address");
-        String a = sc.nextLine();
-
-        Swiggy sw = new Swiggy(n,p,a);
-        sw.FoodOrder();
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for(int i =0; i<arr.length; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(singleNumber(arr));
     }
 }
    
